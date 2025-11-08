@@ -1,0 +1,4 @@
+perms main.cpp
+perm main.cpp 644
+perms main.cpp
+exit
