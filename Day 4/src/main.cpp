@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <vector>
 #include <cstdlib>
-
 namespace fs = std::filesystem;
 
 std::string format_permissions(fs::perms p) {
