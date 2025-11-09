@@ -8,7 +8,7 @@
 
 namespace fs = std::filesystem;
 
-// Helper: convert perms → rwxr-xr--
+
 std::string format_permissions(fs::perms p) {
     auto test = [&](fs::perms bit, char c) {
         return ((p & bit) != fs::perms::none) ? c : '-';
@@ -69,10 +69,10 @@ int main() {
                 std::cout << "No such directory\n";
         }
 
-        // ---------- FILE OPERATIONS ----------
+        
         else if (line.rfind("touch ", 0) == 0) {
             std::string fname = line.substr(6);
-            std::ofstream(current / fname); // create empty file
+            std::ofstream(current / fname); 
             std::cout << "Created file: " << fname << "\n";
         }
         else if (line.rfind("mkdir ", 0) == 0) {
@@ -115,7 +115,7 @@ int main() {
                 std::cout << "Remove failed: " << e.what() << "\n";
             }
         }
-        // -------------------------------------
+        
 
         else {
             std::cout << "Unknown command\n";
