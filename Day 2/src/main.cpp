@@ -36,7 +36,7 @@ int main() {
                 for (auto &p : fs::directory_iterator(fs::current_path()))
                     std::cout << p.path().filename().string() << "\n";
             } catch (const fs::filesystem_error &e) {
-                std::cout << "❌ Error: " << e.what() << "\n";
+                std::cout << " Error: " << e.what() << "\n";
             }
         }
 
@@ -52,10 +52,10 @@ int main() {
                 } else if (fs::exists(fs::current_path() / arg)) {
                     fs::current_path(fs::current_path() / arg);
                 } else {
-                    std::cout << "❌ Directory not found: " << arg << "\n";
+                    std::cout << " Directory not found: " << arg << "\n";
                 }
             } catch (const fs::filesystem_error &e) {
-                std::cout << "❌ Error: " << e.what() << "\n";
+                std::cout << " Error: " << e.what() << "\n";
             }
         }
 
@@ -63,16 +63,16 @@ int main() {
             try {
                 fs::current_path(fs::current_path().parent_path());
             } catch (const fs::filesystem_error &e) {
-                std::cout << "❌ Error: " << e.what() << "\n";
+                std::cout << " Error: " << e.what() << "\n";
             }
         }
 
         else {
-            std::cout << "⚠️  Unknown command. Type 'help' for a list of commands.\n";
+            std::cout << "  Unknown command. Type 'help' for a list of commands.\n";
         }
     }
 
-    std::cout << "👋 Exiting File Explorer...\n";
+    std::cout << " Exiting File Explorer...\n";
     return 0;
 }
 
